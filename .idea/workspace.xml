@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29eff391-ba7a-435c-9ac5-a31eb34beaf8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0912.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap08/ex8_2/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap08/ex8_2/DrinkTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap08/ex8_3/Avenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap08/ex8_3/mainAvenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap0808/ex8_1/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap0808/ex8_1/mainHero.java" afterDir="false" />
+    <list default="true" id="29eff391-ba7a-435c-9ac5-a31eb34beaf8" name="Changes" comment="Constructor Practice">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +22,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ShiftyIsMine&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ShiftyIsMine/JAVA2semester&quot;,
+    &quot;accountId&quot;: &quot;3daabed2-f9cd-4376-b087-0de87112308d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2lwnFwkPKDNYds58yN5J080uDZ5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -50,6 +50,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/react/react0912",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,11 +76,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726099908498</updated>
-      <workItem from="1726099909549" duration="6306000" />
+      <workItem from="1726099909549" duration="7317000" />
+      <workItem from="1726116550144" duration="106000" />
     </task>
+    <task id="LOCAL-00001" summary="Constructor Practice">
+      <option name="closed" value="true" />
+      <created>1726109575037</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726109575037</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Constructor Practice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Constructor Practice" />
   </component>
 </project>
