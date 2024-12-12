@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class OrderInfoView extends JPanel {
@@ -17,10 +18,11 @@ public class OrderInfoView extends JPanel {
     JPanel panC = new JPanel(new BorderLayout());
     JPanel pan1 = new JPanel();
     JPanel pan2 = new JPanel();
+    JPanel addPanel = new JPanel(new GridLayout(3,1));
     JTextField tfSearch = new JTextField(20);
     DefaultTableModel tableModel = new DefaultTableModel();
     JTable table;
-    String[] header = {"주문번호","주문고객","주문상품","수량","배송지","주문일자"};
+    String[] header = {"주문번호", "주문고객", "주문상품", "수량", "배송지", "주문일자"};
     public OrderInfoView() {
         setLayout(new BorderLayout(5,20));
 
@@ -30,9 +32,12 @@ public class OrderInfoView extends JPanel {
         add(panN,"North");
         add(panC,"Center");
 
+
+
         addPan1();
         addPan2();
         addTable();
+        insertOrderInfo();
         initList("");
     }
     public void addPan1(){
@@ -44,12 +49,14 @@ public class OrderInfoView extends JPanel {
         JButton btnSearch = new JButton("검색");
         btnSearch.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-
+                String searchWord = tfSearch.getText();
+                initList(searchWord);
             }
         });
         pan2.add(lblSearch);
         pan2.add(tfSearch);
         pan2.add(btnSearch);
+
     }
 
     public void addTable(){
@@ -84,5 +91,47 @@ public class OrderInfoView extends JPanel {
             tableModel.setValueAt(orderEntity.getOrderDate(),i,5);
             i++;
         }
+    }
+    public void insertOrderInfo(){
+        JLabel title = new JLabel("주문정보 입력",JLabel.CENTER);
+        JButton btnAdd = new JButton("주문추가");
+        panC.add(addPanel,"South");
+        JPanel p1 = new JPanel();
+        JPanel p2 = new JPanel();
+        addPanel.add(title); addPanel.add(p1); addPanel.add(p2);
+
+        String[] lblstrs = {"주문번호 : ", "고객아이디 : ", "제품번호 : ", "수량 : ", "배송지 : ","주문일자 : "};
+        JLabel[] lbls = new JLabel[lblstrs.length];
+        JTextField[] texts = new JTextField[lblstrs.length];
+        for (int i = 0; i < lbls.length; i++) {
+            lbls[i] = new JLabel(lblstrs[i]);
+            texts[i] = new JTextField(20);
+            if(i < 3){
+                p1.add(lbls[i]);
+                p1.add(texts[i]);
+            }
+            else{
+                p2.add(lbls[i]);
+                p2.add(texts[i]);
+            }
+        }
+        p2.add(btnAdd);
+
+        btnAdd.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                OrderEntity orderEntity = new OrderEntity();
+                orderEntity.setOrderNum(texts[0].getText());
+                orderEntity.setOrderCustomer(texts[1].getText());
+                orderEntity.setOrderProduct(texts[2].getText());
+                orderEntity.setAmount(Integer.parseInt(texts[3].getText()));
+                orderEntity.setDestination(texts[4].getText());
+                orderEntity.setOrderDate(Timestamp.valueOf(texts[5].getText()+" 00:00:00"));
+
+                OrderRepository orderRepository = new OrderRepository();
+                orderRepository.insertOrder(orderEntity);
+                initList("");
+            }
+        });
     }
 }

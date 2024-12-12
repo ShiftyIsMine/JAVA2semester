@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
-    public static final int FRAME_WIDTH = 700;
-    public static final int FRAME_HEIGHT = 400;
+    public static int FRAME_WIDTH = 1100;
+    public static int FRAME_HEIGHT = 500;
     public static int FRAME_X=300;
     public static int FRAME_Y=300;
     public MainFrame() {
@@ -21,8 +21,8 @@ public class MainFrame extends JFrame {
         add(orderInfoView,"Center");
 
 
-        FRAME_X = a - 2*FRAME_WIDTH;
-        FRAME_Y = b - 2*FRAME_HEIGHT;
+        FRAME_X = (a-FRAME_X)/2;
+        FRAME_Y = (b-FRAME_X)/2;
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocation(FRAME_X,FRAME_Y);

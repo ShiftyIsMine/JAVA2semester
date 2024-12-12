@@ -13,7 +13,7 @@ public class OrderRepository {
 
     public ArrayList<OrderEntity> getOrderList(String searchWord){
         Connection con = jdbc.JDBCConnector.getConnection();
-        String sql = "select 주문번호,고객이름,제품명,수량,배송지,주문일자 from 고객 c,주문 o,제품 p where o.주문고객=c.고객아이디 and o.주문제품=p.제품번호 and 고객이름 like ?";
+        String sql = "select 주문번호,고객이름,제품명,수량,배송지,주문일자 from 고객 c,주문 o,제품 p where o.주문고객=c.고객아이디 and o.주문제품=p.제품번호 and 고객이름 like ? order by 주문번호 asc";
         OrderEntity orderEntity = null;
         try {
             PreparedStatement pstmt = con.prepareStatement(sql);
@@ -35,5 +35,24 @@ public class OrderRepository {
             System.out.println(e);
         }
         return orderList;
+    }
+    public void insertOrder(OrderEntity orderEntity){
+
+        String sql = "insert into 주문 values(?, ?, ?, ?, ?, ?)";
+        Connection con = jdbc.JDBCConnector.getConnection();
+        try {
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, orderEntity.getOrderNum());
+            pstmt.setString(2, orderEntity.getCustomerName());
+            pstmt.setString(3, orderEntity.getProductName());
+            pstmt.setInt(4, orderEntity.getAmount());
+            pstmt.setString(5, orderEntity.getDestination());
+            pstmt.setTimestamp(6, orderEntity.getOrderDate());
+            pstmt.executeUpdate();
+
+            con.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 }
